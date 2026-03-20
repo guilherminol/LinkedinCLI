@@ -1,0 +1,65 @@
+# Project State
+
+## Project Reference
+
+See: .planning/PROJECT.md (updated 2026-03-20)
+
+**Core value:** Generate authoritative, professional AI posts in EN and PT that position the user as a trusted "AI translator" — attracting US tech recruiters without hype, emojis, or clickbait.
+**Current focus:** Phase 1 — Core Generation Loop
+
+## Current Position
+
+Phase: 1 of 4 (Core Generation Loop)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-03-20 — Roadmap created, requirements mapped, ready for Phase 1 planning
+
+Progress: [░░░░░░░░░░] 0%
+
+## Performance Metrics
+
+**Velocity:**
+- Total plans completed: 0
+- Average duration: -
+- Total execution time: 0 hours
+
+**By Phase:**
+
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| - | - | - | - |
+
+**Recent Trend:**
+- Last 5 plans: -
+- Trend: -
+
+*Updated after each plan completion*
+
+## Accumulated Context
+
+### Decisions
+
+Decisions are logged in PROJECT.md Key Decisions table.
+Recent decisions affecting current work:
+
+- [Pre-phase]: Use Anthropic SDK directly — do NOT use LangChain (STACK.md recommendation overrides ARCHITECTURE.md references to LangChain)
+- [Pre-phase]: Embedding model is ChromaDB default (all-MiniLM-L6-v2) — local-first, no OpenAI API key required for RAG
+- [Pre-phase]: Portuguese posts generated independently from same inputs, not translated from English — requires PT-specific system prompt with one-shot examples
+- [Pre-phase]: Per-turn rule injection (short rule block prepended to every LLM call) + post-generation blocked vocabulary check — must be in Phase 1, not retrofitted
+
+### Pending Todos
+
+None yet.
+
+### Blockers/Concerns
+
+- [Phase 1]: Portuguese one-shot example posts must be written before or during Phase 1 planning — user input required
+- [Phase 1]: Three post format structural specs (exact length constraints, section structure) must be defined before prompt engineering begins
+- [Phase 2]: Chunking strategy for mixed PDF/PPTX corpora and ChromaDB collection schema warrant a research pass before Phase 2 planning (flagged in SUMMARY.md)
+- [Phase 3]: Tavily query construction for AI-domain specificity and prompt injection sanitization warrant a research pass before Phase 3 planning (flagged in SUMMARY.md)
+
+## Session Continuity
+
+Last session: 2026-03-20
+Stopped at: Roadmap created — all 16 v1 requirements mapped to 4 phases, ROADMAP.md and STATE.md written
+Resume file: None
