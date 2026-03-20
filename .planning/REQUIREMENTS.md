@@ -32,8 +32,8 @@
 
 ### Output
 
-- [ ] **OUT-01**: Posts saved as `.md` files at `posts/YYYY-MM/slug.md` with front-matter metadata (date, format, language, topic)
-- [ ] **OUT-02**: User can list previously generated posts with `/list` command
+- [x] **OUT-01**: Posts saved as `.md` files at `posts/YYYY-MM/slug.md` with front-matter metadata (date, format, language, topic)
+- [x] **OUT-02**: User can list previously generated posts with `/list` command
 - [ ] **OUT-03**: Tool avoids re-suggesting topics already covered in previous posts by checking existing post metadata
 
 ## v2 Requirements
@@ -81,8 +81,8 @@
 | KB-03 | Phase 2 | Pending |
 | KB-04 | Phase 2 | Pending |
 | NEWS-01 | Phase 3 | Pending |
-| OUT-01 | Phase 1 | Pending |
-| OUT-02 | Phase 1 | Pending |
+| OUT-01 | Phase 1 | Complete |
+| OUT-02 | Phase 1 | Complete |
 | OUT-03 | Phase 3 | Pending |
 
 **Coverage:**
