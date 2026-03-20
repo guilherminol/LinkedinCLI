@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "CLI tool that acts as a personal LinkedIn copywriter for an AI engineer"
 requires-python = ">=3.11"
 dependencies = [
-    "anthropic>=0.86.0",
+    "openai>=1.0.0",
     "prompt-toolkit>=3.0.50",
     "rich>=14.0.0",
     "python-frontmatter>=1.1.0",

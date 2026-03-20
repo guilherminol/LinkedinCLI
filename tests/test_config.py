@@ -7,10 +7,10 @@ def test_import_linkedin_poster():
     import linkedin_poster  # noqa: F401
 
 
-def test_anthropic_model_value():
-    """config.ANTHROPIC_MODEL equals expected model string."""
-    from linkedin_poster.config import ANTHROPIC_MODEL
-    assert ANTHROPIC_MODEL == "claude-sonnet-4-20250514"
+def test_model_value():
+    """config.MODEL has a non-empty default value."""
+    from linkedin_poster.config import MODEL
+    assert MODEL != ""
 
 
 def test_posts_dir_value():

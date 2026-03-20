@@ -1,12 +1,13 @@
-"""PostGenerator: bilingual LinkedIn post generation via Anthropic API."""
+"""PostGenerator: bilingual LinkedIn post generation via OpenRouter API."""
 from dataclasses import dataclass
 from typing import List, Dict, Optional
 
-import anthropic
+from openai import OpenAI
 
 from linkedin_poster.config import (
-    ANTHROPIC_API_KEY,
-    ANTHROPIC_MODEL,
+    OPENROUTER_API_KEY,
+    OPENROUTER_BASE_URL,
+    MODEL,
     MAX_TOKENS,
     MAX_RETRIES,
     HISTORY_SOFT_CAP,
@@ -32,14 +33,17 @@ class GenerationResult:
 
 
 class PostGenerator:
-    """Generates bilingual LinkedIn posts via Anthropic API.
+    """Generates bilingual LinkedIn posts via OpenRouter API.
 
     Maintains separate EN and PT conversation histories.
     Validates each post independently for emoji violations.
     """
 
-    def __init__(self, client: Optional[anthropic.Anthropic] = None):
-        self._client = client or anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    def __init__(self, client: Optional[OpenAI] = None):
+        self._client = client or OpenAI(
+            api_key=OPENROUTER_API_KEY,
+            base_url=OPENROUTER_BASE_URL,
+        )
         self._en_history: List[Dict[str, str]] = []
         self._pt_history: List[Dict[str, str]] = []
         self._current_topic: str = ""
@@ -78,7 +82,6 @@ class PostGenerator:
 
     def refine(self, instruction: str) -> GenerationResult:
         """Refine the current post pair with a user instruction."""
-        # Generate refined EN
         en_raw = self._call_api(instruction, EN_SYSTEM_PROMPT, self._en_history)
         en_text, en_passed = validate_post(
             en_raw,
@@ -86,7 +89,6 @@ class PostGenerator:
             max_retries=MAX_RETRIES,
         )
 
-        # Generate refined PT
         pt_raw = self._call_api(instruction, PT_SYSTEM_PROMPT, self._pt_history)
         pt_text, pt_passed = validate_post(
             pt_raw,
@@ -117,13 +119,13 @@ class PostGenerator:
         history.append({"role": "user", "content": user_msg})
         self._truncate_history(history)
 
-        response = self._client.messages.create(
-            model=ANTHROPIC_MODEL,
+        messages = [{"role": "system", "content": system_prompt}] + history
+        response = self._client.chat.completions.create(
+            model=MODEL,
             max_tokens=MAX_TOKENS,
-            system=system_prompt,
-            messages=history,
+            messages=messages,
         )
-        assistant_text = response.content[0].text
+        assistant_text = response.choices[0].message.content
         history.append({"role": "assistant", "content": assistant_text})
         self._truncate_history(history)
         return assistant_text
@@ -141,13 +143,13 @@ class PostGenerator:
         if history and history[-1]["role"] == "assistant":
             history.pop()
 
-        response = self._client.messages.create(
-            model=ANTHROPIC_MODEL,
+        messages = [{"role": "system", "content": system_prompt}] + history
+        response = self._client.chat.completions.create(
+            model=MODEL,
             max_tokens=MAX_TOKENS,
-            system=system_prompt,
-            messages=history,
+            messages=messages,
         )
-        assistant_text = response.content[0].text
+        assistant_text = response.choices[0].message.content
         history.append({"role": "assistant", "content": assistant_text})
         return assistant_text
 
