@@ -102,11 +102,11 @@ class TestRefine:
 
 class TestEmojiValidation:
     def test_en_emoji_triggers_retry(self, mock_client):
-        # First EN call returns emoji, retry returns clean; PT is clean
+        # EN initial has emoji -> validate_post calls regenerate -> EN retry clean -> PT clean
         mock_client.messages.create.side_effect = [
             _make_response("text \U0001f680 with rocket"),  # EN initial (has emoji)
-            _make_response("PT clean text"),                  # PT initial
             _make_response("EN clean text"),                  # EN retry via validate_post
+            _make_response("PT clean text"),                  # PT initial
         ]
         gen = PostGenerator(client=mock_client)
         result = gen.generate_pair("AI", "short")
