@@ -29,7 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can select any of the three formats (short text, carousel/sections, hook+breakdown) and receive structurally distinct output for each
   4. User can type `/save` and find a correctly named `.md` file at `posts/YYYY-MM/slug.md` with front-matter metadata
   5. Generated posts never contain emojis or clickbait phrases — validated on every generation, with a re-generation triggered automatically on violation
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffolding, prompts, and emoji validator (GEN-01, GEN-03, GEN-04)
+- [ ] 01-02-PLAN.md — Output storage layer: save and list posts (OUT-01, OUT-02)
+- [ ] 01-03-PLAN.md — Generation engine: bilingual Anthropic API client (GEN-02, CLI-04)
+- [ ] 01-04-PLAN.md — CLI REPL, commands, display, and end-to-end wiring (CLI-01, CLI-02)
 
 ### Phase 2: Knowledge Base Pipeline
 **Goal**: Users can drop their technical PDFs and PPTXs into a `knowledge/` folder, run an ingest command, and have subsequent post generation automatically pull relevant context from those documents.
@@ -69,7 +74,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Generation Loop | 0/TBD | Not started | - |
+| 1. Core Generation Loop | 0/4 | Planning complete | - |
 | 2. Knowledge Base Pipeline | 0/TBD | Not started | - |
 | 3. News Research Integration | 0/TBD | Not started | - |
 | 4. Hardening and Polish | 0/TBD | Not started | - |
