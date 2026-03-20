@@ -1,0 +1,31 @@
+[project]
+name = "linkedin-poster"
+version = "0.1.0"
+description = "CLI tool that acts as a personal LinkedIn copywriter for an AI engineer"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.86.0",
+    "prompt-toolkit>=3.0.50",
+    "rich>=14.0.0",
+    "python-frontmatter>=1.1.0",
+    "python-slugify>=8.0.0",
+    "emoji>=2.15.0",
+    "python-dotenv>=1.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.12.0",
+]
+
+[project.scripts]
+linkedin-poster = "linkedin_poster.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
