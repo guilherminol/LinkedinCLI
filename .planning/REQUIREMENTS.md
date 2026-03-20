@@ -10,12 +10,12 @@
 - [ ] **CLI-01**: User can interact via a conversational REPL with session history
 - [ ] **CLI-02**: User can use `/new`, `/refine`, `/save`, `/list` commands to navigate the post creation workflow
 - [ ] **CLI-03**: Tool automatically suggests AI news topics at session start
-- [ ] **CLI-04**: User sees a formatted post preview in the terminal before saving
+- [x] **CLI-04**: User sees a formatted post preview in the terminal before saving
 
 ### Generation
 
 - [x] **GEN-01**: User can choose post format — short text (300-600 chars), carousel/sections (long-form), or hook+breakdown
-- [ ] **GEN-02**: Every post is generated simultaneously in English and Portuguese (independent generation, not translation)
+- [x] **GEN-02**: Every post is generated simultaneously in English and Portuguese (independent generation, not translation)
 - [x] **GEN-03**: Generated posts enforce no-emoji and no-clickbait rules automatically — validated on every generation via post-processing check
 - [x] **GEN-04**: All posts follow a consistent "AI translator" voice — technical depth made accessible to non-engineer readers
 
@@ -71,9 +71,9 @@
 | CLI-01 | Phase 1 | Pending |
 | CLI-02 | Phase 1 | Pending |
 | CLI-03 | Phase 3 | Pending |
-| CLI-04 | Phase 1 | Pending |
+| CLI-04 | Phase 1 | Complete |
 | GEN-01 | Phase 1 | Complete |
-| GEN-02 | Phase 1 | Pending |
+| GEN-02 | Phase 1 | Complete |
 | GEN-03 | Phase 1 | Complete |
 | GEN-04 | Phase 1 | Complete |
 | KB-01 | Phase 2 | Pending |
