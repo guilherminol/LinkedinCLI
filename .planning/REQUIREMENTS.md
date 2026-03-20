@@ -14,10 +14,10 @@
 
 ### Generation
 
-- [ ] **GEN-01**: User can choose post format — short text (300-600 chars), carousel/sections (long-form), or hook+breakdown
+- [x] **GEN-01**: User can choose post format — short text (300-600 chars), carousel/sections (long-form), or hook+breakdown
 - [ ] **GEN-02**: Every post is generated simultaneously in English and Portuguese (independent generation, not translation)
-- [ ] **GEN-03**: Generated posts enforce no-emoji and no-clickbait rules automatically — validated on every generation via post-processing check
-- [ ] **GEN-04**: All posts follow a consistent "AI translator" voice — technical depth made accessible to non-engineer readers
+- [x] **GEN-03**: Generated posts enforce no-emoji and no-clickbait rules automatically — validated on every generation via post-processing check
+- [x] **GEN-04**: All posts follow a consistent "AI translator" voice — technical depth made accessible to non-engineer readers
 
 ### Knowledge Base
 
@@ -72,10 +72,10 @@
 | CLI-02 | Phase 1 | Pending |
 | CLI-03 | Phase 3 | Pending |
 | CLI-04 | Phase 1 | Pending |
-| GEN-01 | Phase 1 | Pending |
+| GEN-01 | Phase 1 | Complete |
 | GEN-02 | Phase 1 | Pending |
-| GEN-03 | Phase 1 | Pending |
-| GEN-04 | Phase 1 | Pending |
+| GEN-03 | Phase 1 | Complete |
+| GEN-04 | Phase 1 | Complete |
 | KB-01 | Phase 2 | Pending |
 | KB-02 | Phase 2 | Pending |
 | KB-03 | Phase 2 | Pending |

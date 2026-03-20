@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. Generated posts never contain emojis or clickbait phrases — validated on every generation, with a re-generation triggered automatically on violation
 **Plans:** 4 plans
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffolding, prompts, and emoji validator (GEN-01, GEN-03, GEN-04)
+- [x] 01-01-PLAN.md — Project scaffolding, prompts, and emoji validator (GEN-01, GEN-03, GEN-04)
 - [ ] 01-02-PLAN.md — Output storage layer: save and list posts (OUT-01, OUT-02)
 - [ ] 01-03-PLAN.md — Generation engine: bilingual Anthropic API client (GEN-02, CLI-04)
 - [ ] 01-04-PLAN.md — CLI REPL, commands, display, and end-to-end wiring (CLI-01, CLI-02)
